@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <!-- Navbar content here -->
+  </nav>
+
+  <article id="counterArticle">
+    <!-- Contatore e tabellina verranno aggiunti qui tramite JavaScript -->
+  </article>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+  function createCounterAndTable() {
+    let counter = 1;
+    const counterInterval = setInterval(function() {
+      if (counter <= 5) {
+       
+        document.getElementById('counterArticle').innerHTML = `<p>Contatore: ${counter}</p>`;
+
+     
+        counter++;
+      } else {
+      
+        clearInterval(counterInterval);
+
+    
+        let tableContent = '<p>Tabellina del 1 al 10:</p><ul>';
+        for (let i = 1; i <= 10; i++) {
+          tableContent += `<li>${i}</li>`;
+        }
+        tableContent += '</ul>';
+
+      
+        document.getElementById('counterArticle').innerHTML += tableContent;
+      }
+    }, 1000); 
+  }
+
+  
+  createCounterAndTable();
+});
+</script>
+
+</body>
+</html>
