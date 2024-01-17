@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio Menu Personale</title>
+    <script>
+        function stampaNumeri() {
+          
+            var numeroInput = parseInt(document.getElementById("inputNumero").value);
+
+            var risultatoElement = document.getElementById("risultato");
+
+          
+            risultatoElement.innerHTML = "";
+
+          
+            for (var i = 1; i <= numeroInput; i++) {
+                risultatoElement.innerHTML += i + "<br>";
+            }
+
+            
+            var dieciPercento = 0.1 * numeroInput;
+            risultatoElement.innerHTML += "<br>10% del numero: " + dieciPercento;
+        }
+    </script>
+</head>
+<body>
+    <h1>Esercizio Menu Personale</h1>
+
+    <label for="inputNumero">Inserisci un numero:</label>
+    <input type="number" id="inputNumero" name="inputNumero" required>
+
+    <button onclick="stampaNumeri()">Stampa Numeri</button>
+
+    <div id="risultato"></div>
+</body>
+</html>
