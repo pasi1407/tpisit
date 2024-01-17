@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatore e Tabellina</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var contatore = 0;
+            var contatore = 1;
+
+            
+            function updateCounter() {
+               
+                console.log(contatore);
+
+                
+                if (contatore === 5) {
+                    stampaTabellina();
+                    contatore = 0; 
+                }
+
+                contatore++; 
+
+                
+                setTimeout(updateCounter, 1000);
+            }
+
+           
+            function stampaTabellina() {
+                var tabellina = '';
+                for (var i = 1; i <= 10; i++) {
+                    tabellina += i + '<br>';
+                }
+                console.log(tabellina);
+            }
+
+            
+            updateCounter();
+        });
+    </script>
+</head>
+<body>
+  
+</body>
+</html>
