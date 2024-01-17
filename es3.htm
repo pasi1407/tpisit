@@ -15,41 +15,51 @@
   </nav>
 
   <article id="counterArticle">
-    <!-- Contatore e tabellina verranno aggiunti qui tramite JavaScript -->
+    <!-- Contatore e tabelline verranno aggiunti qui tramite JavaScript -->
   </article>
 </div>
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-
-  function createCounterAndTable() {
+  // Funzione per creare il contatore e le tabelline
+  function createCounterAndTables() {
     let counter = 1;
     const counterInterval = setInterval(function() {
       if (counter <= 5) {
-       
+        // Aggiorna il contenuto dell'articolo con il valore del contatore
         document.getElementById('counterArticle').innerHTML = `<p>Contatore: ${counter}</p>`;
 
-     
+        // Incrementa il contatore
         counter++;
       } else {
-      
+        // Quando il contatore raggiunge 5, stampa tutte le tabelline
         clearInterval(counterInterval);
 
-    
-        let tableContent = '<p>Tabellina del 1 al 10:</p><ul>';
+        // Creazione delle tabelline
+        let tablesContent = '<div class="row">';
         for (let i = 1; i <= 10; i++) {
-          tableContent += `<li>${i}</li>`;
+          tablesContent += `<div class="col">${createMultiplicationTable(i)}</div>`;
         }
-        tableContent += '</ul>';
+        tablesContent += '</div>';
 
-      
-        document.getElementById('counterArticle').innerHTML += tableContent;
+        // Aggiungi le tabelline all'articolo
+        document.getElementById('counterArticle').innerHTML += tablesContent;
       }
-    }, 1000); 
+    }, 1000); // Intervallo di 1000 ms (1 secondo)
   }
 
-  
-  createCounterAndTable();
+  // Funzione per creare una tabellina di moltiplicazione
+  function createMultiplicationTable(number) {
+    let tableContent = `<p>Tabellina del ${number}:</p><ul>`;
+    for (let i = 1; i <= 10; i++) {
+      tableContent += `<li>${number} * ${i} = ${number * i}</li>`;
+    }
+    tableContent += '</ul>';
+    return tableContent;
+  }
+
+  // Chiamata alla funzione per avviare il processo
+  createCounterAndTables();
 });
 </script>
 
