@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Divs</title>
+</head>
+<body>
+  <input type="number" id="numDiv">
+  <button onclick="createDivs()">Create Divs</button>
+  <div id="container"></div>
+
+  <script>
+    function createDivs() {
+      var num = document.getElementById('numDiv').value;
+      for (var i = 0; i < num; i++) {
+        var newDiv = document.createElement('div');
+        newDiv.style.width = '40px';
+        newDiv.style.height = '40px';
+        newDiv.style.border = '1px solid black';
+        newDiv.style.backgroundColor = 'green'; 
+        document.getElementById('container').appendChild(newDiv);
+      }
+    }
+  </script>
+</body>
+</html>
