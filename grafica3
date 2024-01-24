@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .square {
+      width: 10px;
+      height: 10px;
+      margin: 2px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <table>
+  <tbody>
+  <script>
+    for (var i = 1; i <= 100; i++) {
+      if (i % 2 == 0) {
+        document.write('<td><div class="square" style="background-color: lightgrey; border: 1px solid black"></div></td>');
+      } else {
+        document.write('<td><div class="square" style="background-color: darkgrey; border: 1px solid black"></div></td>');
+      }
+      if (i % 10 === 0) {
+        document.write('<tr></tr>');
+      }
+    }
+  </script>
+  </tbody>
+  </table>
+</body>
+</html>
