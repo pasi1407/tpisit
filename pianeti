@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolatore peso su pianeti</title>
+</head>
+<body>
+    <h1>Calcolatore peso su pianeti</h1>
+    <label for="pesoInput">Inserisci il tuo peso (kg): </label>
+    <input type="number" id="pesoInput">
+    <button onclick="calcolaPesoSuPianeti()">Calcola</button>
+    <div id="risultato"></div>
+
+    <script>
+        function calcolaPesoSuPianeti() {
+            const pianeti = [
+                { nome: "Mercurio", accelerazione: 3.7 },
+                { nome: "Venere", accelerazione: 8.87 },
+                { nome: "Terra", accelerazione: 9.81 },
+                { nome: "Marte", accelerazione: 3.71 },
+                { nome: "Giove", accelerazione: 24.79 },
+                { nome: "Saturno", accelerazione: 10.44 },
+                { nome: "Urano", accelerazione: 8.69 },
+                { nome: "Nettuno", accelerazione: 11.15 },
+                { nome: "Plutone", accelerazione: 0.62 }
+            ];
+
+            const pesoInput = document.getElementById("pesoInput").value;
+            let risultato = "";
+
+            for (let pianeta of pianeti) {
+                let pesoSuPianeta = pesoInput * (pianeta.accelerazione / pianeti[2].accelerazione); // accelerazione relativa alla Terra
+                risultato += "<p>Peso su " + pianeta.nome + ": " + pesoSuPianeta.toFixed(2) + " kg</p>";
+            }
+
+            document.getElementById("risultato").innerHTML = risultato;
+        }
+    </script>
+</body>
+</html>
