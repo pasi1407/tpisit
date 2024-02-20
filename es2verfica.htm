@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Incrementa Numeri</title>
+  <style>
+    button {
+      margin: 10px;
+      padding: 5px 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <button id="button1">Incrementa di 2</button>
+  <button id="button2">Incrementa di 3</button>
+  <button id="button3">Incrementa di 7</button>
+  <p id="output"></p>
+
+  <script>
+    let num1 = 0;
+    let num2 = 0;
+    let num3 = 0;
+
+    document.getElementById("button1").addEventListener("click", function() {
+      num1 += 2;
+      document.getElementById("output").innerText = "Numero incrementato di 2: " + num1;
+    });
+
+    document.getElementById("button2").addEventListener("click", function() {
+      num2 += 3;
+      document.getElementById("output").innerText = "Numero incrementato di 3: " + num2;
+    });
+
+    document.getElementById("button3").addEventListener("click", function() {
+      num3 += 7;
+      document.getElementById("output").innerText = "Numero incrementato di 7: " + num3;
+    });
+  </script>
+</body>
+</html>
