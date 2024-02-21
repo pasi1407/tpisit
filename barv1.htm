@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatbot</title>
+  <style>
+    button {
+      margin: 5px;
+    }
+    #drinkMenu {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <button id="instructionBtn">Istruzioni</button>
+  <button id="drinkMenuBtn">Menu Drink</button>
+  <button id="orderBtn">Ordini</button>
+
+  <div id="drinkMenu">
+    <ul>
+      <li>Cocktail 1</li>
+      <li>Cocktail 2</li>
+      <li>Cocktail 3</li>
+      <!-- Aggiungi altri drink secondo necessità -->
+    </ul>
+  </div>
+
+  <script>
+    const instructionBtn = document.getElementById('instructionBtn');
+    const drinkMenuBtn = document.getElementById('drinkMenuBtn');
+    const orderBtn = document.getElementById('orderBtn');
+    const drinkMenu = document.getElementById('drinkMenu');
+
+    let orders = [];
+
+    instructionBtn.addEventListener('click', function() {
+      alert('Ciao');
+    });
+
+    drinkMenuBtn.addEventListener('click', function() {
+      alert('Premi il secondo bottone per avere la lista dei drink che sono in grado di prepararti.');
+      drinkMenu.style.display = 'block';
+    });
+
+    orderBtn.addEventListener('click', function() {
+      const order = prompt('Inserisci il tuo ordine:');
+      orders.push(order);
+      alert('Ordine registrato: ' + order);
+      displayOrders();
+    });
+
+    function displayOrders() {
+      let orderList = 'Lista degli ordini:\n';
+      orders.forEach(function(order, index) {
+        orderList += (index + 1) + '. ' + order + '\n';
+      });
+      alert(orderList);
+    }
+  </script>
+</body>
+</html>
