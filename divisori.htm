@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Divisori da 1 a 1000</title>
+</head>
+<body>
+    <ul id="divisorsList"></ul>
+
+    <script>
+        const divisorsList = document.getElementById('divisorsList');
+
+        for (let i = 1; i <= 1000; i++) {
+            const divisori = [];
+            let message = '';
+
+            for (let j = 1; j <= i; j++) {
+                if (i % j === 0) {
+                    divisori.push(j);
+                }
+            }
+
+            if (divisori.length === 2) {
+                message = ' (ha solo due divisori)';
+            }
+
+            const listItem = document.createElement('li');
+            listItem.textContent = `Divisori di ${i}: ${divisori.join(', ')}${message}`;
+            divisorsList.appendChild(listItem);
+        }
+    </script>
+</body>
+</html>
