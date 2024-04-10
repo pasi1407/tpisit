@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Conteggio Numeri Primi</title>
+</head>
+<body>
+    <ul id="primeCountList"></ul>
+
+    <script>
+        const primeCountList = document.getElementById('primeCountList');
+
+        function isPrime(num) {
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) {
+                    return false;
+                }
+            }
+            return num > 1;
+        }
+
+        for (let i = 0; i <= 1000; i += 100) {
+            let primeCount = 0;
+
+            for (let j = i; j <= i + 100; j++) {
+                if (isPrime(j)) {
+                    primeCount++;
+                }
+            }
+
+            const listItem = document.createElement('li');
+            listItem.textContent = `Numeri primi da ${i} a ${i + 100}: ${primeCount}`;
+            primeCountList.appendChild(listItem);
+        }
+    </script>
+</body>
+</html>
