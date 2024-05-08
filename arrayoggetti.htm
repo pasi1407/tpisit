@@ -1,0 +1,65 @@
+<SCRIPT Language='JavaScript'>
+function inizia() {
+    var a = document.getElementsByName('A');
+    for (var i = 0; i < a.length; i++) {
+        a[i].style.backgroundColor = 'rgb(255, 255, 255)';
+        a[i].style.left = (i * 60) + 10;
+    }
+
+    var b = new Array();
+    for (var i = 0; i < a.length; i++) {
+        b[i] = 255;
+    }
+
+    var currentIndex = 0; // Indice corrente nel movimento dell'array
+
+    // Funzione per movimentare il segnalino rosso lungo l'array
+    function moveRedMarker() {
+        if (currentIndex < a.length) {
+            b[currentIndex] = b[currentIndex] - 5;
+            a[currentIndex].style.backgroundColor = 'rgb(' + b[currentIndex] + ',' + b[currentIndex] + ',255)';
+            a[currentIndex].innerHTML = b[currentIndex];
+            if (b[currentIndex] < 120) {
+                a[currentIndex].style.color = 'white';
+            }
+            currentIndex++;
+        } else {
+            clearInterval(intervalID); // Se si è raggiunto l'ultimo elemento, interrompi l'intervallo
+        }
+    }
+
+    var intervalID = setInterval(moveRedMarker, 100); // Imposta un intervallo per la funzione di movimento
+}
+</SCRIPT>
+
+<HTML>
+   <HEAD>
+   <TITLE>test7</TITLE>
+   </HEAD>
+
+   <style type="text/css">
+     
+      .miediv
+      {
+
+         position:absolute;
+         height:50px;
+         width:50px;
+         border-width:1px;
+         border:solid black;
+	 top:20px;
+         text-align:center;
+         color:black;
+      }
+
+   </style>
+
+   <BODY onLoad="inizia()">
+	<DIV name='A' class='miediv'></DIV>
+	<DIV name='A' class='miediv'></DIV>
+	<DIV name='A' class='miediv'></DIV>
+	<DIV name='A' class='miediv'></DIV>
+	<DIV name='A' class='miediv'></DIV>
+	<DIV name='A' class='miediv'></DIV>
+   </BODY>
+</HTML>
