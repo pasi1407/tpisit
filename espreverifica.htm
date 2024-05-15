@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test11</title>
+    <style type="text/css">
+        .miediv {
+            position: absolute;
+            height: 50px;
+            width: 50px;
+            border: solid black 1px;
+            top: 20px;
+            background-color: yellow;
+        }
+    </style>
+    <script language="JavaScript">
+        function inizia() {
+            var a = document.getElementsByName('A');
+            var lung = a.length;
+            var pos = -1;
+            var k = 0
+            var posizione = new Array()
+            posizione = [0, 1, 2, 4, 2, 1, 5, 7, 6, 5, 6, 7, 0]
+
+            for (var i = 0; i < lung; i++) {
+                a[i].style.left = (i * 60) + 'px';
+            }
+
+            setInterval(function () {
+                
+                if (pos < lung - 1) {
+                    for (var i = 0; i < lung; i++) {
+                        a[i].style.backgroundColor = 'yellow';
+                    }
+
+                    pos = posizione[k++];
+                    a[pos].style.backgroundColor = 'red';
+                } else {
+                    pos = -1;
+                }
+            }, 300);
+        }
+    </script>
+</head>
+<body onLoad="inizia()">
+    <div name='A' class='miediv'></div>
+    <div name='A' class='miediv'></div>
+    <div name='A' class='miediv'></div>
+    <div name='A' class='miediv'></div>
+    <div name='A' class='miediv'></div>
+    <div name='A' class='miediv'></div>
+    <div name='A' class='miediv'></div>
+    <div name='A' class='miediv'></div>
+</body>
+</html>
