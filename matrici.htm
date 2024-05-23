@@ -1,0 +1,17 @@
+<!DOCTYPE html> <html> <head> <title>Matrice 8x8</title> </head> <body> <table id="matrix"></table> <script> // Creiamo la matrice 8x8 let matrix = []; for (let i = 0; i < 8; i++) { matrix[i] = []; for (let j = 0; j < 8; j++) { matrix[i][j] = i * 8 + j + 1; } } // Aggiungiamo la matrice alla tabella HTML let table = document.getElementById("matrix"); for (let i = 0; i < 8; i++) { let row = table.insertRow(i); for (let j = 0; j < 8; j++) { let cell = row.insertCell(j); cell.innerHTML = matrix[i][j]; } } </script> </body> </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
